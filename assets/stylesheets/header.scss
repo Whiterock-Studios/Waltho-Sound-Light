@@ -1,0 +1,167 @@
+header {
+	@extend %tran;
+	background:#fff;
+	border-bottom:solid 5px $blue;
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	// overflow:hidden;
+	z-index:999;
+	nav {
+		div {
+			display:inline;
+		}
+		ul {
+			background:#fff;
+			margin:0;
+			padding:0;
+			display:inline-block;
+			li {
+				position:relative;
+				display:inline-block;
+					a {
+						@extend %tran;
+						padding:1.9em 1.2em;
+						line-height:70px;
+						text-transform:uppercase;
+						font-size:14px;
+							&:hover {
+								background:$light-grey;
+							}
+					}
+					ul {
+						@extend %tran;
+						background:#fff;
+						position: absolute;
+						top:100%;
+						left:0;
+						transform:translatey(-100%);
+						overflow:hidden;
+						display:inline-block;
+						min-width:100%;
+						z-index:-1;
+							li {
+								display:block;
+								a {
+									display:block;
+									line-height:200%;
+									padding:0.8em 1.2em;
+									white-space:nowrap;
+								}
+							}
+					}
+					&:hover,&:focus {
+						ul {
+							transform:translatey(0);
+							border-bottom:solid 5px $blue;
+						}
+					}
+			}
+		}
+	}
+
+	#header-logo {
+		img {
+			max-height:40px;
+		}
+		a {
+			display:inline-block;
+			padding:15px 0;
+		}
+	}
+}
+
+.headroom--pinned {
+    top:0;
+}
+.headroom--unpinned {
+    top:-100px;
+}
+
+#burger {
+	@extend .pull-right;
+	padding:20px 15px 15px 15px;
+	cursor:pointer;
+	display:none;
+	z-index:100;
+	span {
+		@extend %tran;
+		display:block;
+		width:30px;
+		height:5px;
+		background:#000;
+		margin-bottom:5px;
+	}
+}
+
+.burger-cooked {
+	position:relative;
+	span:nth-of-type(1){
+		transform:rotate(45deg);
+		margin-top:10px;
+	}
+	span:nth-of-type(2){
+		transform:rotate(-45deg);
+		margin-top:-10px;
+	}
+	span:nth-of-type(3){
+		transform:rotate(-45deg);
+		margin-top:-10px;
+	}
+}
+
+@media only screen and (max-width:$screen-md){
+	header {
+		overflow:visible;
+	}	
+
+	nav .menus {
+		display:none;
+		z-index:98;
+		position:fixed;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		background:$blue;
+		color:#fff;
+		padding-top:40px;
+		padding-bottom:40px;
+		overflow-y:auto;
+		div {
+			display:block;
+			max-width:300px;
+			margin:0 auto;
+		}
+		li {
+			display:block;
+				background:none;
+				a {
+				background:none;
+
+					padding:20px;
+					font-size:1.5em;
+						&:hover {
+							background:none;
+						}
+				}
+		}
+	}
+
+	header ul {
+		position:relative!important;
+		transform:translatey(0)!important;
+		background:none!important;
+			ul {
+				padding-left:30px;
+				border:none!important;
+				font-size:0.8em;
+				z-index:1!important;
+			}
+	}
+
+	#burger {
+		display:block;
+	}
+}

@@ -1,0 +1,107 @@
+html {
+	overflow-y:scroll;
+	overflow-x:hidden;
+}
+
+body {
+	font-size:16px;
+	color:#000;
+	overflow:hidden;
+	font-family: 'Karla', sans-serif;
+		
+		@media screen and (max-width:800px){
+			font-size:15px;
+		}
+
+		@media screen and (max-width:600px){
+			font-size:14px;
+		}
+}
+
+main {
+	display:block;
+	margin-top:75px;
+	padding:0;
+}
+
+a,a:visited,a:hover,a:focus,a:active {
+	color:inherit;
+	text-decoration:inherit;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	text-transform:uppercase;
+	margin:20px 0 20px 0;
+}
+
+h1 {font-size:2em;}
+h2 {font-size:1.8em;}
+h3 {font-size:1.6em;}
+h4 {font-size:1.4em;}
+h5 {font-size:1.2em;}
+h6 {font-size:1.0em;}
+
+.waltho-button {
+	@extend %tran;
+	position:relative;
+	display:inline-block;
+	padding:10px 15px;
+	border:solid 2px $blue;
+	text-transform:uppercase;
+	color:$blue;
+	font-weight:bold;
+	overflow:hidden;
+		
+		&:after, &:before {
+			@extend %tran;
+			color:#fff;
+			position:absolute;
+			top:0;
+			height:100%;
+			width:50%;
+			background:$blue;
+			z-index:-1;
+			padding:10px 0;
+		}
+
+		&:before {
+			left:-100%;
+			content:"G";
+			text-align:right;
+		}
+
+		&:after {
+			right:-100%;
+			content:"O";
+			text-align:left;
+		}
+
+		&:hover {
+			color:rgba(0,0,0,0);
+			&:before {
+				left:0;
+			}
+			&:after {
+				right:0;
+			}
+		}
+
+		&:visited {
+			color:$blue;
+				&:hover {
+					color:#fff;
+				}
+		}
+}
+
+.main-content {
+	@extend %vertical-padding-large;
+}
+
+.page-template-tpl_contact .range-contact {
+	padding-top:0;
+	padding-bottom:0;
+	@media screen and (max-width:$screen-sm){
+		padding-top:80px;
+	}
+}

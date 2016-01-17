@@ -1,0 +1,23 @@
+$blue:#0d6e9e; 
+$light-grey:#f3f2f2;
+$dark-blue:#262931;
+$very-dark-blue:#1a1d26;
+
+%tran {
+	transition:0.3s ease;
+}
+
+%vertical-padding {
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+%vertical-padding-large {
+	padding-top:40px;
+	padding-bottom:40px;
+}
+
+%vertical-padding-extra-large {
+	padding-top:80px;
+	padding-bottom:80px;
+}
